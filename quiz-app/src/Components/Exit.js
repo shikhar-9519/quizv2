@@ -30,7 +30,7 @@ export default function Exit() {
         <div className="card-body">
           <h5 className="card-title">Total Score</h5>
           <p className="card-text">Correct Answers {correct} </p>
-          <p className="card-text">Wrong Answers {10 - correct} </p>
+          <p className="card-text">Wrong Answers {5 - correct} </p>
           <div style={{ display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
           <button type="button" className="btn btn-success" onClick={onNewquiz}>
             Start Again

@@ -8,6 +8,7 @@ export default function QuestionsState(props) {
     const[ind,setInd] = useState(-1);
     const[correct,setCorrect] = useState(0);
 
+    //start the quiz
     const startQues= async(ans)=>{
         const newInd=ind+1;
         setInd(newInd);
@@ -20,6 +21,8 @@ export default function QuestionsState(props) {
           const json = await response.json();
           setQuizQuestion(json);
     }
+
+    //next question API handling
     const nextQues= async(option,time)=>{
             const newInd=ind+1;
         setInd(newInd);
@@ -39,6 +42,7 @@ export default function QuestionsState(props) {
           setQuizQuestion(json);
     }
 
+    //end API handling
     const endQuiz = async(option,time)=>{
         const newInd=ind+1;
     setInd(newInd);

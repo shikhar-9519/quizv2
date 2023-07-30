@@ -1,6 +1,6 @@
 import React,{useState,useContext,useEffect} from "react";
 import quizContext from "../Context/QuizContext";
-import Spinner from "./Spinner";
+import startgif from './start_.gif'
 export default function Quiz() {
     const{quizQuestion, nextQues, endQuiz,ind} = useContext(quizContext);
     const[option,setOption] = useState(null);
@@ -12,7 +12,7 @@ export default function Quiz() {
     }
     const nextQuestion = () => {
         stopTimer();
-        if(ind<5){
+        if(ind<4){
             nextQues(option,timeTaken);
         }
         else {
@@ -38,17 +38,27 @@ export default function Quiz() {
       useEffect(() => {
         startTimer(); // Start the timer when the component mounts for the first question
         return () => {
-          stopTimer(); // Stop the timer when the component is unmounted (e.g., when moving to a different page)
+          stopTimer(); // Stop the timer when the component is unmounted 
         };
       }, []);
     
   return (
     // !quizQuestion && <Spinner/>
-    quizQuestion && <div className="center-container">
-      <div class="card" style={{ width: "50%"}}>
+    <>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      <img src={startgif} className="card-img-top" alt="..." style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}/>
+    {quizQuestion && (<div className="center-container">
+      <div class="card" style={{ width: "50%", border: "2px solid black", backgroundColor: "#f0f0f0" }}>
         <div class="container mt-4">
           <div class="mb-4">
-          <p class="card-text">{quizQuestion.question}</p>
+          <p class="card-text"><b>Ques.{quizQuestion.id}</b> {quizQuestion.question}</p>
           </div>
 
           <div class="form-check mb-2">
@@ -110,10 +120,13 @@ export default function Quiz() {
             {quizQuestion.options[3]}
             </label>
           </div>
+          {/* next button */}
           <div style={{ display: 'flex', justifyContent: 'center',alignItems: 'center'}}>
           <input type="submit" class="btn btn-success" style={{margin: '8px'}} onClick={nextQuestion} disabled={!option}/></div>
         </div>
       </div>
+    </div>)}
     </div>
+    </>
   );
 }

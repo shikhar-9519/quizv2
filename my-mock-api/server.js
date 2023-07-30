@@ -43,6 +43,7 @@ const mockMCQs = [
     let userResponses = [];
     let timeTaken = [];
 
+// Endpoint to start the quiz
   app.get('/startquestion', (req, res) => {
     const nextQuestion = mockMCQs[0];
     res.json(nextQuestion);
@@ -61,6 +62,7 @@ const {index,option, time } = req.body;
     res.json(nextQuestion);
 });
 
+//Endpoint to end the quiz
 app.post('/endquiz', (req, res) => {
     const {index,option, time } = req.body;
       userResponses.push(option);
@@ -72,6 +74,7 @@ app.post('/endquiz', (req, res) => {
         res.json(correct);
     });
 
+    //function to count number of correct answers
     checkAnswers=()=>{
         let ans =0;
         for(let i=0;i<mockMCQs.length;i++){
