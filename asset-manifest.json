@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bc37de0a.css",
+    "main.js": "/static/js/main.ffbaaa81.js",
+    "static/js/787.9e90ff23.chunk.js": "/static/js/787.9e90ff23.chunk.js",
+    "static/media/popper.mp4": "/static/media/popper.6ca52bbf19f4bb32d08d.mp4",
+    "static/media/start_.gif": "/static/media/start_.b0fd53f06b1f1d89cbfc.gif",
+    "static/media/Congo.jpg": "/static/media/Congo.e5857db398214e580416.jpg",
+    "index.html": "/index.html",
+    "main.bc37de0a.css.map": "/static/css/main.bc37de0a.css.map",
+    "main.ffbaaa81.js.map": "/static/js/main.ffbaaa81.js.map",
+    "787.9e90ff23.chunk.js.map": "/static/js/787.9e90ff23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc37de0a.css",
+    "static/js/main.ffbaaa81.js"
+  ]
+}
